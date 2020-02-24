@@ -10,9 +10,9 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
 fi
 
 # Permissions and ownership
-sudo chown -hR vagrant:www-data "$DRUPAL_HOME"/sites/all/libraries
-sudo chown -hR vagrant:www-data "$DRUPAL_HOME"/sites/all/modules
-sudo chown -hR vagrant:www-data "$DRUPAL_HOME"/sites/default/files
+sudo chown -hR ubuntu:www-data "$DRUPAL_HOME"/sites/all/libraries
+sudo chown -hR ubuntu:www-data "$DRUPAL_HOME"/sites/all/modules
+sudo chown -hR ubuntu:www-data "$DRUPAL_HOME"/sites/default/files
 sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/libraries
 sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules
 sudo chmod -R 755 "$DRUPAL_HOME"/sites/default/files
@@ -49,7 +49,7 @@ git config core.filemode false
 # Check for a user's .drush folder, create if it doesn't exist
 if [ ! -d "$HOME_DIR/.drush" ]; then
   mkdir "$HOME_DIR/.drush"
-  sudo chown vagrant:vagrant "$HOME_DIR"/.drush
+  sudo chown ubuntu:ubuntu "$HOME_DIR"/.drush
 fi
 
 # Move OpenSeadragon drush file to user's .drush folder
